@@ -34,6 +34,13 @@ var player = {
   health: startingHealth,
   hits: startingHits,
   items:[items.shield],
+  addMods: function() {
+    var runningTotal = 0;
+    for (var i = 0; i < this.items.length; i++) {
+        runningTotal += this.items[i].modifier;
+    }
+    return runningTotal;
+  },
   slap: function() {
     this.hit(1);
   },
