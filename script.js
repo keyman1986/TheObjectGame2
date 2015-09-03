@@ -12,8 +12,8 @@ var playerName= "PlayerName";
 
 // Item Constructor HERE
 
-var Obj = function(name, modifier, description){
-    this.name = name
+var Item = function(name, modifier, description){
+    this.name = name;
     this.modifier = modifier;
     this.description = description;
     this.draw = function(){
@@ -23,17 +23,17 @@ var Obj = function(name, modifier, description){
 
 
 //global items placeholder HERE
-var items{
-    shield:new Item("Shield",0.5,"This is an awesome shield!"),
-    helmet:new Item("Helmet",0.3,"Strong helmet!"),
-    gloves:new Item("Gloves",0.2,"Chain Mail Gloves rock!"),
+var items = {
+    shield:new Item("Shield",5,"This is an awesome shield!"),
+    helmet:new Item("Helmet",3,"Strong helmet!"),
+    gloves:new Item("Gloves",2,"Chain Mail Gloves rock!")
 }
 
 var player = {
   name: "PlayerName",
   health: startingHealth,
   hits: startingHits,
-  
+  items:[items.shield],
   slap: function() {
     this.hit(1);
   },
