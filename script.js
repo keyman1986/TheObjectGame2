@@ -65,3 +65,12 @@ function update() {
 }
 
 update();
+
+var Obj = function(name, modifier, description){
+    this.name = name
+    this.modifier = modifier;
+    this.description = description;
+    this.draw = function(){
+     //...
+    }
+}
