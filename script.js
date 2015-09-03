@@ -12,13 +12,22 @@ var playerName= "PlayerName";
 
 // Item Constructor HERE
 
-
+var Obj = function(name, modifier, description){
+    this.name = name
+    this.modifier = modifier;
+    this.description = description;
+    this.draw = function(){
+     //...
+    }
+}
 
 
 //global items placeholder HERE
-var items = {
-  
-};
+var items{
+    shield:new Item("Shield",0.5,"This is an awesome shield!"),
+    helmet:new Item("Helmet",0.3,"Strong helmet!"),
+    gloves:new Item("Gloves",0.2,"Chain Mail Gloves rock!"),
+}
 
 var player = {
   name: "PlayerName",
@@ -66,11 +75,3 @@ function update() {
 
 update();
 
-var Obj = function(name, modifier, description){
-    this.name = name
-    this.modifier = modifier;
-    this.description = description;
-    this.draw = function(){
-     //...
-    }
-}
