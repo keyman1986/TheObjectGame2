@@ -8,7 +8,7 @@
 //Constants
 var startingHealth= 100;
 var startingHits= 0;
-var playerName= "PlayerName";
+var playerName= prompt("Please enter the name of the person you'd like to Slap, Punch and Kick:", "");
 
 // Item Constructor HERE
 
@@ -21,19 +21,18 @@ var Item = function(name, modifier, description){
     }
 }
 
-
 //global items placeholder HERE
 var items = {
-    shield:new Item("Shield",5,"This is an awesome shield!"),
-    helmet:new Item("Helmet",3,"Strong helmet!"),
-    gloves:new Item("Gloves",2,"Chain Mail Gloves rock!")
+    shield:new Item("Shield",0.3,"This is an awesome shield!"),
+    helmet:new Item("Helmet",0.2,"Strong helmet!"),
+    gloves:new Item("Gloves",0.1,"Chain Mail Gloves rock!")
 }
 
 var player = {
-  name: "PlayerName",
+  name: playerName,
   health: startingHealth,
   hits: startingHits,
-  items:[items.shield],
+  items:[items.shield],//addMods() is only using shield and not the others -Spencer
   addMods: function() {
     var runningTotal = 0;
     for (var i = 0; i < this.items.length; i++) {
@@ -51,12 +50,15 @@ var player = {
     this.hit(10);
   },
   hit: function(damage) {
-    this.health -= damage;
+    this.health -= (damage - (damage * this.addMods()));
     this.hits++;
     if (this.health <= 0) {
       this.health = 0;
     }
     update();
+    if (this.health <= 0) {
+      alert("You're sick... hitting a man when he's down and out?...");
+    }
   },
   reset: function() {
       this.health = startingHealth,
