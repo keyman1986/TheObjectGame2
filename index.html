@@ -3,7 +3,7 @@
 
 <head>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,12 +12,16 @@
   <div id="board" class=".board">
     <div class="panel panel-primary" id="player-panel">
       <div class="panel-heading">
-        <span class="col-md-4">Health: <span id="health">--</span>
+        <div class="panel-title" class="titlePanel">
+          <h2>
+          <span>Health: <span id="health">--</span>
 
-        <span class="col-md-4">Name: <span id="name">--</span>
+          <span>Name: <span id="name">--</span>
 
-        <span class="col-md-4">Hits: <span id="hits">--</span>
-        
+          <span>Hits: <span id="hits">--</span>
+          </h2>
+
+        </div>
       </div>
       <div class="panel-body">
         <div class="text-center">
@@ -25,7 +29,7 @@
         </div>
         <div class="well item-list" id="player-items">
 
-        </div> 
+        </div>
       </div>
 
       <div class="panel-footer clearfix">

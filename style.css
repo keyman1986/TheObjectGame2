@@ -8,6 +8,9 @@
   margin:5px;
   border:1px solid black;
   width:75px;
-  height:75px;
+  height:175px;
   text-align:center;
+}
+.panelTitle{
+  padding: 2pt;
 }
